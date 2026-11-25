@@ -33,7 +33,7 @@ pip install pillow
 ### 1. 克隆仓库并运行一键安装脚本
 
 ```powershell
-git clone https://github.com/<your-username>/antigravity-gemini-widget.git
+git clone https://github.com/MFavorever/antigravity-gemini-widget.git
 cd antigravity-gemini-widget
 powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
