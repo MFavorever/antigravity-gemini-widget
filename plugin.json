@@ -1,0 +1,12 @@
+{
+  "name": "antigravity-gemini-widget",
+  "displayName": "Gemini 星语猫姬",
+  "version": "0.1.0",
+  "description": "仿 dsh-whale-widget 打造的 Antigravity 底部常驻「Gemini 星语猫姬」桌宠挂件，实时展示今日 Token、5小时/周剩余额度与等效费用，支持每轮自动播报。",
+  "logo": "assets/logo.png",
+  "suggestedPrompts": [
+    "打开 Gemini 星语猫姬面板查看今日 Token 与剩余额度",
+    "查看 Gemini 与 ChatGPT/Claude 的 5 小时和周额度",
+    "启动或调整底部星语猫姬桌面挂件"
+  ]
+}

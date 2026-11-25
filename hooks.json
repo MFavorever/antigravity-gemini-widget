@@ -1,0 +1,30 @@
+{
+  "gemini-widget-bridge": {
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "node hooks/notify.mjs",
+        "timeout": 3
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node hooks/notify.mjs",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "type": "command",
+        "command": "node hooks/notify.mjs",
+        "timeout": 3
+      }
+    ]
+  }
+}

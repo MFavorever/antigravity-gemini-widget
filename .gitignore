@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+
+# OS & Editors
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.log
+
+# Intermediate / local assets & runtime data
+assets/raw_pet.*
+*.mp4
+runtime.json
+ledger.json
+settings.json

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemini 星语猫姬 · 面板</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <img class="avatar" src="assets/gemini-pet.png" alt="Gemini 星语猫姬" />
+          <div>
+            <div class="brand-title">
+              <span>Gemini哈基米账单</span>
+              <span id="live-dot" class="live-dot" title="实时监控中"></span>
+            </div>
+            <div id="plan-sub" class="brand-sub">连接本地日志与额度服务…</div>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <button id="pet-btn" class="btn btn-primary" title="唤出/重启底部悬浮猫姬">唤出猫姬</button>
+          <button id="refresh-btn" class="btn btn-ghost" title="立即刷新">↻</button>
+        </div>
+      </header>
+
+      <nav class="tabs">
+        <button class="tab active" data-tab="overview">实时账单</button>
+        <button class="tab" data-tab="ledger">历史账本</button>
+        <button class="tab" data-tab="settings">挂件设置</button>
+      </nav>
+
+      <main class="content">
+        <section id="tab-overview" class="tab-panel active">
+          <div class="card hero-card">
+            <div class="hero-grid">
+              <div>
+                <div class="label">今日已用 Token</div>
+                <div id="today-tokens" class="metric-xl">0</div>
+              </div>
+              <div class="align-right">
+                <div class="label">今日等效费用</div>
+                <div id="today-cost" class="metric-lg pink">¥0.00</div>
+              </div>
+            </div>
+            <div id="today-breakdown" class="sub-line">输入 0 · 缓存 0 · 输出 0 · 命中率 0%</div>
+          </div>
+
+          <div class="card">
+            <div class="card-head">
+              <span>模型剩余额度（5 小时 / 周）</span>
+              <span id="quota-badge" class="badge">本地估算</span>
+            </div>
+            <div id="quota-list" class="quota-list"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-head">
+              <span>最近一轮消耗</span>
+              <span id="turn-model" class="badge muted">-</span>
+            </div>
+            <div id="turn-detail" class="sub-line">等待对话轮次数据…</div>
+          </div>
+
+          <div id="bubble-card" class="card dialogue-card" title="点击切换下一句">
+            <span id="dialogue-text">💬 嗨~今天也要闪闪发光哦！</span>
+          </div>
+        </section>
+
+        <section id="tab-ledger" class="tab-panel">
+          <div class="card">
+            <div class="card-head">
+              <span>近期每日账单</span>
+              <span id="ledger-currency" class="badge">CNY</span>
+            </div>
+            <div id="ledger-chart" class="ledger-chart"></div>
+            <div id="ledger-rows" class="ledger-rows"></div>
+          </div>
+        </section>
+
+        <section id="tab-settings" class="tab-panel">
+          <div class="card settings-form">
+            <label class="row-ctrl">
+              <span>自动启动底部悬浮猫姬</span>
+              <input type="checkbox" id="set-autoLaunchPet" />
+            </label>
+            <label class="row-ctrl">
+              <span>挂件缩放倍数 (<span id="scale-val">1.0x</span>)</span>
+              <input type="range" id="set-scale" min="0.6" max="2.5" step="0.05" />
+            </label>
+            <label class="row-ctrl">
+              <span>停靠模式</span>
+              <select id="set-dockMode">
+                <option value="antigravity">跟随 Antigravity 底部</option>
+                <option value="free">桌面自由悬浮</option>
+              </select>
+            </label>
+            <label class="row-ctrl">
+              <span>显示币种</span>
+              <select id="set-currency">
+                <option value="CNY">人民币 (¥)</option>
+                <option value="USD">美元 ($)</option>
+              </select>
+            </label>
+            <label class="row-ctrl">
+              <span>按压与完成音效</span>
+              <input type="checkbox" id="set-soundEnabled" />
+            </label>
+            <label class="row-ctrl">
+              <span>每轮结束自动冒泡播报</span>
+              <input type="checkbox" id="set-autoBroadcast" />
+            </label>
+            <label class="row-ctrl">
+              <span>播报停留秒数</span>
+              <input type="number" id="set-broadcastDurationSec" min="2" max="30" />
+            </label>
+            <div class="btn-row">
+              <button id="save-settings-btn" class="btn btn-primary">保存设置</button>
+              <button id="stop-pet-btn" class="btn btn-ghost">隐藏猫姬</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+    <script src="/preload.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
