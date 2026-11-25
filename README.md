@@ -1,4 +1,4 @@
-# Antigravity Gemini Widget（Gemini 星语猫姬挂件）
+# Antigravity Gemini Widget（用于Antigravity的Gemini哈基米账单挂件）
 
 仿照 GitHub 开源项目 `dsh-whale-widget` 为 **Google Antigravity** 打造的底部常驻「Gemini 星语猫姬」桌宠与用量账单插件。
 
